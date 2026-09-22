@@ -1,5 +1,5 @@
 /**
- * Profile View — install, about, credits, authors, disclaimer.
+ * Profile View: install, about, credits, authors, disclaimer.
  */
 
 const ProfileView = (() => {
@@ -31,15 +31,29 @@ const ProfileView = (() => {
 
       <section class="section">
         <div class="section-header"><h2>About Us</h2></div>
-        <div class="card">
+        <div class="card about-card">
+          <img class="about-logo" src="${Utils.assetUrl(APP_CONFIG.assets.logo.png192)}" alt="${Utils.escapeHtml(APP_CONFIG.appName)} logo" width="96" height="96">
           <p class="about-text">AI Empowered Pharmacy combines pharmacy education, pharmaceutical science, AI-inspired concepts and interactive learning into one modern Progressive Web App experience.</p>
-          <p class="about-text">This is a ${Utils.escapeHtml(APP_CONFIG.versionLabel)} — an educational technology demonstration built to explore how mobile-first design and interactive content can make pharmaceutical science more approachable.</p>
+          <p class="about-text">This is ${Utils.escapeHtml(APP_CONFIG.versionLabel)}, an educational technology demonstration built to explore how mobile-first design and interactive content can make pharmaceutical science more approachable.</p>
         </div>
       </section>
 
       <section class="section">
         <div class="section-header"><h2>Project Creators</h2></div>
         ${APP_CONFIG.authors.map(authorCardHtml).join("")}
+      </section>
+
+      <section class="section">
+        <div class="section-header"><h2>Institutional Context</h2></div>
+        <div class="card institutional-card">
+          <img class="institutional-logo" src="${Utils.assetUrl(APP_CONFIG.assets.institutional.ripsatLogo.png)}" alt="${Utils.escapeHtml(APP_CONFIG.assets.institutional.ripsatLogo.alt)}" width="200" height="288" loading="lazy">
+          <div class="institutional-text">
+            <h3>${Utils.escapeHtml(APP_CONFIG.institution.name)}</h3>
+            <p class="institutional-meta">${Utils.escapeHtml(APP_CONFIG.institution.authority)} &middot; ${Utils.escapeHtml(APP_CONFIG.institution.established)}</p>
+            <p class="institutional-motto">&ldquo;${Utils.escapeHtml(APP_CONFIG.institution.motto)}&rdquo;</p>
+            <p class="institutional-note">${Utils.escapeHtml(APP_CONFIG.institution.note)}</p>
+          </div>
+        </div>
       </section>
 
       <section class="section">
@@ -102,14 +116,19 @@ const ProfileView = (() => {
       ? `<img src="${Utils.escapeHtml(author.photo)}" alt="">`
       : `<span>${initial}</span>`;
     const socialLinks = [];
+    if (author.social?.instagram) {
+      socialLinks.push(
+        `<a href="${Utils.escapeHtml(author.social.instagram)}" target="_blank" rel="noopener" class="author-social-link" aria-label="${Utils.escapeHtml(author.name)} on Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>`
+      );
+    }
     if (author.social?.github) {
       socialLinks.push(
-        `<a href="${Utils.escapeHtml(author.social.github)}" target="_blank" rel="noopener" aria-label="${Utils.escapeHtml(author.name)} on GitHub" style="color:var(--color-text-secondary); margin-right:10px;"><i class="fa-brands fa-github" aria-hidden="true"></i></a>`
+        `<a href="${Utils.escapeHtml(author.social.github)}" target="_blank" rel="noopener" class="author-social-link" aria-label="${Utils.escapeHtml(author.name)} on GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>`
       );
     }
     if (author.social?.linkedin) {
       socialLinks.push(
-        `<a href="${Utils.escapeHtml(author.social.linkedin)}" target="_blank" rel="noopener" aria-label="${Utils.escapeHtml(author.name)} on LinkedIn" style="color:var(--color-text-secondary);"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>`
+        `<a href="${Utils.escapeHtml(author.social.linkedin)}" target="_blank" rel="noopener" class="author-social-link" aria-label="${Utils.escapeHtml(author.name)} on LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>`
       );
     }
     return `
@@ -119,7 +138,7 @@ const ProfileView = (() => {
           <h3>${Utils.escapeHtml(author.name)}</h3>
           <p>${Utils.escapeHtml(author.role)}</p>
         </div>
-        ${socialLinks.length ? `<div>${socialLinks.join("")}</div>` : ""}
+        ${socialLinks.length ? `<div class="author-social">${socialLinks.join("")}</div>` : ""}
       </div>`;
   }
 

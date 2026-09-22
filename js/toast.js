@@ -1,5 +1,5 @@
 /**
- * Toast — lightweight notification system.
+ * Toast, lightweight notification system.
  */
 
 const Toast = (() => {

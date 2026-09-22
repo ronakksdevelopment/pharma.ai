@@ -1,6 +1,6 @@
 # AI Empowered Pharmacy
 
-**v0.5 Beta Prototype** — an educational pharmacy & pharmaceutical technology demonstration Progressive Web App (PWA).
+**Version 1.0**, an educational pharmacy & pharmaceutical technology demonstration Progressive Web App (PWA).
 
 > ⚠️ **Educational demo only.** This is **not** a real pharmacy, diagnostic tool, prescription system or medical decision system. It does not dispense medication and must never be used for diagnosis, prescription, treatment or personalized dosage decisions. Always consult a licensed healthcare professional for medical advice.
 
@@ -8,19 +8,19 @@
 
 ## About
 
-AI Empowered Pharmacy combines pharmacy education, pharmaceutical science, AI-inspired concepts and interactive learning into a single mobile-first, installable PWA. It's built with plain HTML5, CSS3 and vanilla JavaScript (ES6+) — no frameworks, no backend, no build step.
+AI Empowered Pharmacy combines pharmacy education, pharmaceutical science, AI-inspired concepts and interactive learning into a single mobile-first, installable PWA. It's built with plain HTML5, CSS3 and vanilla JavaScript (ES6+), no frameworks, no backend, no build step.
 
 ## Features
 
-- **Onboarding flow** — three-screen first-launch welcome tour, replayable anytime from Profile
-- **Home** — hero section, quick actions, featured research, education topics, featured medicines and a quiz shortcut
-- **Explore** — searchable, filterable educational cards across 7 categories (Pharmacy Basics, Pharmaceutical Science, Drug Delivery, Nanotechnology, AI in Healthcare, Dosage Forms, Medication Safety) plus medicine reference cards
-- **Quiz** — 13 multiple-choice pharmacy & pharmaceutical science questions with instant feedback, progress tracking, scoring and retry
-- **Research** — pharmaceutical technology themes including the project's own fictional **Cytosen** concept, clearly labeled as a project concept (not a real drug)
-- **Profile** — PWA install button, replayable onboarding, About Us, Credits, two project-concept authors, developer contribution, GitHub link and educational disclaimer
-- **Installable PWA** — manifest, service worker, offline caching, custom install prompt, installed-state detection
-- **Accessible** — semantic HTML, ARIA labels, visible focus states, ~44px touch targets, `prefers-reduced-motion` support
-- **Responsive** — mobile-first (9:16), scales cleanly to tablet and desktop with a sidebar navigation layout
+- **Onboarding flow**, three-screen first-launch welcome tour, replayable anytime from Profile
+- **Home**, hero section, quick actions, featured research, education topics, featured medicines and a quiz shortcut
+- **Explore**, searchable, filterable educational cards across 7 categories (Pharmacy Basics, Pharmaceutical Science, Drug Delivery, Nanotechnology, AI in Healthcare, Dosage Forms, Medication Safety) plus medicine reference cards
+- **Quiz**, 13 multiple-choice pharmacy & pharmaceutical science questions with instant feedback, progress tracking, scoring and retry
+- **Research**, pharmaceutical technology themes including the project's own fictional **Cytosen** concept, clearly labeled as a project concept (not a real drug)
+- **Profile**, PWA install button, replayable onboarding, About Us, Credits, two project-concept authors, developer contribution, GitHub link and educational disclaimer
+- **Installable PWA**, manifest, service worker, offline caching, custom install prompt, installed-state detection
+- **Accessible**, semantic HTML, ARIA labels, visible focus states, ~44px touch targets, `prefers-reduced-motion` support
+- **Responsive**, mobile-first (9:16), scales cleanly to tablet and desktop with a sidebar navigation layout
 
 ## Tech Stack
 
@@ -32,7 +32,7 @@ AI Empowered Pharmacy combines pharmacy education, pharmaceutical science, AI-in
 ## Project Structure
 
 ```
-├── index.html                 # App shell — all views live in one page
+├── index.html                 # App shell, all views live in one page
 ├── manifest.webmanifest       # PWA manifest
 ├── service-worker.js          # Offline caching (GitHub Pages path-safe)
 ├── css/
@@ -92,7 +92,7 @@ python3 -m http.server 8080
 1. Push this project to a GitHub repository.
 2. In repository **Settings → Pages**, set the source to the branch/folder containing these files (e.g. `main` / `/root`).
 3. The app auto-detects its base path at runtime (`js/utils.js → getBasePath()`), so it works correctly whether hosted at a domain root or under a project path like `https://username.github.io/repo-name/`.
-4. No further configuration is needed — all internal asset paths are relative.
+4. No further configuration is needed, all internal asset paths are relative.
 
 ## Credits
 

@@ -11,6 +11,7 @@
   flex-direction: column;
   padding-top: var(--safe-top);
   padding-bottom: var(--safe-bottom);
+  min-height: 0;
 }
 
 .onboarding.is-hidden {
@@ -21,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: var(--space-4);
+  padding: var(--space-3) var(--space-4);
   flex-shrink: 0;
 }
 
@@ -32,36 +33,62 @@
   font-weight: 700;
   font-size: var(--fs-sm);
   min-height: var(--touch-target);
+  min-width: var(--touch-target);
   padding: 0 var(--space-3);
+  border-radius: var(--radius-pill);
+  transition: background var(--transition-fast), color var(--transition-fast);
 }
 
+.onboarding-skip:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.onboarding-skip:active {
+  transform: scale(0.97);
+}
+
+/* The track is the scrolling/shrinking region between the fixed topbar
+   and fixed footer. min-height: 0 is required so flex children (the
+   slides) are allowed to shrink below their content size instead of
+   overflowing the viewport on short screens. */
 .onboarding-track {
   flex: 1;
   display: flex;
   overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
+  min-height: 0;
 }
 
 .onboarding-slide {
   min-width: 100%;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 0 var(--space-6);
+  padding: var(--space-2) var(--space-6) var(--space-4);
   transition: transform var(--transition-slow), opacity var(--transition-slow);
 }
 
 .onboarding-slide-image {
   width: 100%;
   max-width: 320px;
-  margin: 0 auto var(--space-6);
+  /* Scales down on short viewports so heading, body and controls
+     always stay visible without clipping or internal scrolling. */
+  flex: 0 1 auto;
+  margin: 0 auto var(--space-5);
 }
 
 .onboarding-slide-image img {
   width: 100%;
   height: auto;
+  max-height: min(42vh, 420px);
+  object-fit: contain;
   border-radius: var(--radius-lg);
+  margin: 0 auto;
 }
 
 .onboarding-slide h2 {
@@ -70,6 +97,7 @@
   letter-spacing: -0.01em;
   margin-bottom: var(--space-3);
   max-width: 340px;
+  flex-shrink: 0;
 }
 
 .onboarding-slide p {
@@ -77,14 +105,15 @@
   font-size: var(--fs-base);
   line-height: var(--lh-relaxed);
   max-width: 320px;
+  flex-shrink: 0;
 }
 
 .onboarding-footer {
   flex-shrink: 0;
-  padding: var(--space-5) var(--space-6) var(--space-7);
+  padding: var(--space-4) var(--space-6) calc(var(--space-5) + var(--safe-bottom));
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-4);
   align-items: center;
 }
 
@@ -118,12 +147,57 @@
   flex: 1;
 }
 
+.onboarding-actions .btn-primary i {
+  transition: transform var(--transition-fast);
+}
+
+.onboarding-actions .btn-primary:hover i {
+  transform: translateX(2px);
+}
+
+/* Short-viewport safety net: on very small or landscape phones, shrink
+   the image further and tighten spacing before anything overflows. */
+@media (max-height: 640px) {
+  .onboarding-slide-image {
+    max-width: 220px;
+    margin-bottom: var(--space-3);
+  }
+  .onboarding-slide-image img {
+    max-height: 28vh;
+  }
+  .onboarding-slide h2 {
+    font-size: var(--fs-lg);
+    margin-bottom: var(--space-2);
+  }
+  .onboarding-footer {
+    padding-top: var(--space-3);
+  }
+}
+
+@media (max-height: 480px) {
+  .onboarding-slide-image {
+    max-width: 160px;
+  }
+  .onboarding-slide-image img {
+    max-height: 22vh;
+  }
+}
+
 @media (min-width: 700px) {
   .onboarding-slide-image {
     max-width: 380px;
   }
+  .onboarding-slide-image img {
+    max-height: min(48vh, 480px);
+  }
   .onboarding-footer,
   .onboarding-actions {
     max-width: 400px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .onboarding-slide {
+    transition: none;
   }
 }

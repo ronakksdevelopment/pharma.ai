@@ -1,5 +1,5 @@
 /**
- * Explore View — searchable educational cards with category filters.
+ * Explore View, searchable educational cards with category filters.
  */
 
 const ExploreView = (() => {

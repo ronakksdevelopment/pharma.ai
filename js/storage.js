@@ -1,5 +1,5 @@
 /**
- * Storage — thin localStorage wrapper with namespacing and safe fallbacks.
+ * Storage, thin localStorage wrapper with namespacing and safe fallbacks.
  * All app persistence (onboarding state, bookmarks, quiz progress,
  * preferences) goes through this module.
  */
@@ -15,7 +15,7 @@ const Storage = (() => {
     window.localStorage.removeItem(testKey);
   } catch (e) {
     storageAvailable = false;
-    console.warn("localStorage unavailable — using in-memory fallback for this session.");
+    console.warn("localStorage unavailable, using in-memory fallback for this session.");
   }
 
   function key(k) {

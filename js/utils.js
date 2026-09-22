@@ -1,5 +1,5 @@
 /**
- * Utility functions — base path resolution, DOM helpers, escaping.
+ * Utility functions, base path resolution, DOM helpers, escaping.
  */
 
 const Utils = (() => {
@@ -10,7 +10,7 @@ const Utils = (() => {
    */
   function getBasePath() {
     const { pathname } = window.location;
-    // Directory containing index.html — strip filename if present.
+    // Directory containing index.html, strip filename if present.
     const dir = pathname.substring(0, pathname.lastIndexOf("/") + 1);
     return dir || "/";
   }

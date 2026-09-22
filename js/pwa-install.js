@@ -1,5 +1,5 @@
 /**
- * PwaInstall — handles beforeinstallprompt capture and custom Install
+ * PwaInstall, handles beforeinstallprompt capture and custom Install
  * button wiring, plus installed-state detection.
  */
 

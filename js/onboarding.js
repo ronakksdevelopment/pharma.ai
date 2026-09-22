@@ -1,5 +1,5 @@
 /**
- * Onboarding — first-launch welcome flow using the three welcome
+ * Onboarding: first-launch welcome flow using the three welcome
  * illustrations. Replayable from Profile.
  */
 
@@ -18,12 +18,12 @@ const Onboarding = (() => {
     {
       key: "welcome2",
       title: "Pharmaceutical Science & Research",
-      body: "Dive into research themes — from molecular structures to nanoparticle concepts — presented in a clear, educational way.",
+      body: "Dive into research themes, from molecular structures to nanoparticle concepts, presented in a clear, educational way.",
     },
     {
       key: "welcome3",
       title: "An Interactive Learning Experience",
-      body: "Test your knowledge with quizzes, browse educational cards and explore project research — all in one beta prototype app.",
+      body: "Test your knowledge with quizzes, browse educational cards and explore project research, all in one beta prototype app.",
     },
   ];
 
@@ -45,7 +45,7 @@ const Onboarding = (() => {
           <div class="onboarding-slide-image">
             <picture>
               <source srcset="${Utils.assetUrl(illus.webp)}" type="image/webp">
-              <img src="${Utils.assetUrl(illus.png)}" alt="${Utils.escapeHtml(illus.alt)}" width="700" height="1244" loading="${i === 0 ? "eager" : "lazy"}">
+              <img src="${Utils.assetUrl(illus.png)}" alt="${Utils.escapeHtml(illus.alt)}" width="700" height="1243" loading="${i === 0 ? "eager" : "lazy"}">
             </picture>
           </div>
           <h2>${Utils.escapeHtml(slide.title)}</h2>

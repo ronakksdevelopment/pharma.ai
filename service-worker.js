@@ -1,13 +1,13 @@
 /**
- * Service Worker — AI Empowered Pharmacy
+ * Service Worker, AI Empowered Pharmacy
  * Provides offline caching for the app shell and core assets.
  * Uses self.registration.scope to remain GitHub Pages project-path safe.
  */
 
-const CACHE_VERSION = "aiep-v0.5.0";
+const CACHE_VERSION = "aiep-v1.0.0";
 const CACHE_NAME = `aiep-cache-${CACHE_VERSION}`;
 
-// Resolve the scope root once — works whether hosted at domain root
+// Resolve the scope root once, works whether hosted at domain root
 // or under a GitHub Pages project path like /repo-name/.
 const SCOPE = self.registration ? self.registration.scope : self.location.href;
 
@@ -54,6 +54,9 @@ const APP_SHELL = [
   "assets/illustrations/welcome-2-research.png",
   "assets/illustrations/welcome-3-learning.png",
   "assets/illustrations/home-hero-3d.png",
+  "assets/authors/karnajit-reang.jpg",
+  "assets/authors/kishaloy-debnath.jpg",
+  "assets/institutional/ripsat-logo.png",
 ].map((path) => new URL(path, SCOPE).toString());
 
 self.addEventListener("install", (event) => {

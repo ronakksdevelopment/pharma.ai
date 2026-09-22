@@ -1,5 +1,5 @@
 /**
- * Sheet — bottom-sheet / modal detail view for topics, medicines and
+ * Sheet, bottom-sheet / modal detail view for topics, medicines and
  * research items.
  */
 

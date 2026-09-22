@@ -1,5 +1,5 @@
 /**
- * App — main orchestrator: routing between views, navigation wiring,
+ * App, main orchestrator: routing between views, navigation wiring,
  * global event delegation, online/offline detection.
  */
 
@@ -119,7 +119,7 @@ const App = (() => {
     });
     window.addEventListener("offline", () => {
       update();
-      Toast.error("You are offline — showing cached content");
+      Toast.error("You are offline, showing cached content");
     });
     update();
   }

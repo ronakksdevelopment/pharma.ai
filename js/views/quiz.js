@@ -1,5 +1,5 @@
 /**
- * Quiz View — interactive multiple-choice pharmacy quiz.
+ * Quiz View, interactive multiple-choice pharmacy quiz.
  */
 
 const QuizView = (() => {

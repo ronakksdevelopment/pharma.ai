@@ -1,5 +1,5 @@
 /**
- * AI Empowered Pharmacy — Central Configuration
+ * AI Empowered Pharmacy - Central Configuration
  * ------------------------------------------------
  * Single source of truth for asset paths, brand colors, app metadata,
  * author/credit info and editable social links. Edit this file to
@@ -13,8 +13,8 @@ const APP_CONFIG = {
   // ---- App identity ----------------------------------------------------
   appName: "AI Empowered Pharmacy",
   shortName: "AIEmpPharm",
-  version: "0.5",
-  versionLabel: "v0.5 Beta Prototype",
+  version: "1.0",
+  versionLabel: "Version 1.0",
   tagline: "Learn pharmacy & pharmaceutical science with AI-inspired concepts",
   description:
     "An educational demonstration app exploring pharmacy education, pharmaceutical science and AI-in-healthcare concepts through interactive learning.",
@@ -34,7 +34,7 @@ const APP_CONFIG = {
     surfaceBlue: "#EAF3FF",
   },
 
-  // ---- Asset paths (centralized — swap files here only) -----------------
+  // ---- Asset paths (centralized, swap files here only) -----------------
   assets: {
     logo: {
       png512: "assets/icons/icon-512.png",
@@ -67,6 +67,12 @@ const APP_CONFIG = {
         alt: "3D illustration of a capsule, DNA helix, molecule and AI brain icon representing pharmaceutical technology",
       },
     },
+    institutional: {
+      ripsatLogo: {
+        png: "assets/institutional/ripsat-logo.png",
+        alt: "Regional Institute of Pharmaceutical Science & Technology, Govt of Tripura, official logo",
+      },
+    },
   },
 
   // ---- Navigation --------------------------------------------------------
@@ -82,21 +88,19 @@ const APP_CONFIG = {
   // Edit names, photos and social URLs here only. Never invent contact info.
   authors: [
     {
-      name: "Author One",
+      name: "Karnajit Reang",
       role: "Project Idea & Concept",
-      photo: null, // add a path under assets/ if a photo is supplied
+      photo: "assets/authors/karnajit-reang.jpg",
       social: {
-        github: null,
-        linkedin: null,
+        instagram: "https://www.instagram.com/karnajit_2005",
       },
     },
     {
-      name: "Author Two",
+      name: "Kishaloy Debnath",
       role: "Project Idea & Concept",
-      photo: null,
+      photo: "assets/authors/kishaloy-debnath.jpg",
       social: {
-        github: null,
-        linkedin: null,
+        instagram: "https://www.instagram.com/kishaloy_debnath",
       },
     },
   ],
@@ -112,9 +116,20 @@ const APP_CONFIG = {
     githubUrl: "https://github.com/ronakksdevelopment/ai-empowered-pharmacy", // editable
   },
 
+  // ---- Institutional context (educational context only, no affiliation
+  // claim beyond what appears on the supplied logo) -------------------------
+  institution: {
+    name: "Regional Institute of Pharmaceutical Science & Technology",
+    authority: "Govt of Tripura",
+    established: "ESTD. 1979",
+    motto: "Education is the manifestation of the perfection in man",
+    note:
+      "Shown for educational and institutional project context only. This does not imply official partnership, endorsement or sponsorship.",
+  },
+
   // ---- Social links (only include if a real URL is supplied) -------------
   social: {
-    // Left empty intentionally — populate only with verified real URLs.
+    // Left empty intentionally, populate only with verified real URLs.
   },
 
   // ---- Disclaimer ----------------------------------------------------------

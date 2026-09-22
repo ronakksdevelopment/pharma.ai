@@ -1,8 +1,8 @@
 /**
- * AI Empowered Pharmacy — Educational Content Data
+ * AI Empowered Pharmacy, Educational Content Data
  * ---------------------------------------------------
  * All in-app educational copy lives here: explore categories, medicine
- * cards, research topics and quiz questions. General knowledge only —
+ * cards, research topics and quiz questions. General knowledge only -
  * no personalized dosage, diagnosis or prescription content.
  */
 
@@ -27,7 +27,7 @@ const APP_DATA = {
       summary:
         "Pharmacy is the science and practice of discovering, preparing, dispensing and reviewing medicines safely and effectively.",
       body:
-        "Pharmacy sits at the intersection of chemistry, biology and patient care. Pharmacists study how drugs are formulated, how they act in the body, and how to counsel people on safe, effective use. This app explores those ideas conceptually — it does not replace professional pharmacy advice.",
+        "Pharmacy sits at the intersection of chemistry, biology and patient care. Pharmacists study how drugs are formulated, how they act in the body, and how to counsel people on safe, effective use. This app explores those ideas conceptually, it does not replace professional pharmacy advice.",
       tags: ["Foundations", "Education"],
     },
     {
@@ -35,9 +35,9 @@ const APP_DATA = {
       category: "science",
       title: "Pharmacology Fundamentals",
       summary:
-        "Pharmacology studies how drugs interact with biological systems — from absorption to elimination.",
+        "Pharmacology studies how drugs interact with biological systems, from absorption to elimination.",
       body:
-        "Two core ideas anchor pharmacology: pharmacokinetics (what the body does to a drug — absorption, distribution, metabolism, excretion) and pharmacodynamics (what a drug does to the body — its mechanism and effect). Understanding both helps explain why timing, formulation and dose form matter.",
+        "Two core ideas anchor pharmacology: pharmacokinetics (what the body does to a drug, absorption, distribution, metabolism, excretion) and pharmacodynamics (what a drug does to the body, its mechanism and effect). Understanding both helps explain why timing, formulation and dose form matter.",
       tags: ["ADME", "Mechanism"],
     },
     {
@@ -47,7 +47,7 @@ const APP_DATA = {
       summary:
         "Drug delivery technology controls where, when and how fast a medicine is released in the body.",
       body:
-        "Modern delivery systems go beyond a simple tablet. Extended-release coatings, transdermal patches, inhalers and injectable depots are all engineered to shape a drug's release profile — improving effectiveness and reducing how often a dose is needed.",
+        "Modern delivery systems go beyond a simple tablet. Extended-release coatings, transdermal patches, inhalers and injectable depots are all engineered to shape a drug's release profile, improving effectiveness and reducing how often a dose is needed.",
       tags: ["Formulation", "Release profile"],
     },
     {
@@ -57,7 +57,7 @@ const APP_DATA = {
       summary:
         "Nanotechnology enables tiny engineered carriers that can transport drugs with more precision.",
       body:
-        "Nanoparticle carriers — lipid nanoparticles, polymeric nanoparticles and similar structures — are designed at the scale of billionths of a meter. Conceptually, they can help protect a drug until it reaches its target site, a major research direction in modern pharmaceutical science.",
+        "Nanoparticle carriers, lipid nanoparticles, polymeric nanoparticles and similar structures, are designed at the scale of billionths of a meter. Conceptually, they can help protect a drug until it reaches its target site, a major research direction in modern pharmaceutical science.",
       tags: ["Nanomedicine", "Research"],
     },
     {
@@ -65,7 +65,7 @@ const APP_DATA = {
       category: "ai",
       title: "AI in Healthcare & Pharmacy",
       summary:
-        "Artificial intelligence is increasingly used to support research, education and workflow — not to replace clinicians.",
+        "Artificial intelligence is increasingly used to support research, education and workflow, not to replace clinicians.",
       body:
         "AI techniques can help researchers analyze molecular data, support educational tools like this app, and assist administrative workflows. In real healthcare settings, AI supports licensed professionals; it does not diagnose or prescribe on its own.",
       tags: ["AI", "Technology"],
@@ -77,7 +77,7 @@ const APP_DATA = {
       summary:
         "Tablets, capsules, liquids, topicals and injectables each suit different clinical needs.",
       body:
-        "A dosage form is the physical form a medicine takes — solid, liquid, semi-solid or gas. The choice affects how quickly a drug acts, how it's stored, and how easy it is to take. This app explains forms conceptually, without recommending any specific product for any condition.",
+        "A dosage form is the physical form a medicine takes, solid, liquid, semi-solid or gas. The choice affects how quickly a drug acts, how it's stored, and how easy it is to take. This app explains forms conceptually, without recommending any specific product for any condition.",
       tags: ["Formulation", "Basics"],
     },
     {
@@ -107,7 +107,7 @@ const APP_DATA = {
       summary:
         "Many drugs act by binding to specific receptors, like a key fitting a lock.",
       body:
-        "Receptor theory describes how drug molecules bind to protein receptors on or inside cells, triggering or blocking a biological response. Selectivity — how precisely a drug binds its intended target — is central to both effectiveness and side-effect profile.",
+        "Receptor theory describes how drug molecules bind to protein receptors on or inside cells, triggering or blocking a biological response. Selectivity, how precisely a drug binds its intended target, is central to both effectiveness and side-effect profile.",
       tags: ["Mechanism", "Theory"],
     },
   ],
@@ -127,7 +127,7 @@ const APP_DATA = {
         "One of the most commonly used medicines worldwide for general education purposes.",
         "Available in multiple dosage forms, including tablets, capsules and liquid suspensions.",
       ],
-      note: "Educational overview only — not a dosing guide. Always follow product labeling and professional guidance.",
+      note: "Educational overview only, not a dosing guide. Always follow product labeling and professional guidance.",
     },
     {
       id: "amoxicillin",
@@ -157,7 +157,7 @@ const APP_DATA = {
         "Used in pharmacy education to illustrate anti-inflammatory mechanisms.",
         "Available in tablet, liquid and topical gel forms in many markets.",
       ],
-      note: "Educational overview only — not a dosing guide. Always follow product labeling and professional guidance.",
+      note: "Educational overview only, not a dosing guide. Always follow product labeling and professional guidance.",
     },
     {
       id: "nanoparticle-delivery",
@@ -172,7 +172,7 @@ const APP_DATA = {
         "Research explores using nanoparticles to help protect a drug and guide it toward a target tissue.",
         "This card represents general pharmaceutical science concepts explored by researchers worldwide.",
       ],
-      note: "Purely conceptual and educational — represents general nanomedicine research themes, not a specific product or clinical claim.",
+      note: "Purely conceptual and educational, represents general nanomedicine research themes, not a specific product or clinical claim.",
     },
   ],
 
@@ -180,13 +180,13 @@ const APP_DATA = {
   research: [
     {
       id: "cytosen",
-      title: "Cytosen — Project Concept",
+      title: "Cytosen, Project Concept",
       icon: "fa-flask-vial",
       badge: "Project Concept",
       summary:
         "Cytosen is a conceptual research theme created for this educational project to explore targeted delivery ideas.",
       body:
-        "Cytosen is not a real drug, product or clinical entity — it's a fictional research concept created for AI Empowered Pharmacy to make abstract pharmaceutical science ideas more tangible. It's used here only to illustrate how researchers think about targeted delivery, without making any unsupported clinical claims.",
+        "Cytosen is not a real drug, product or clinical entity, it's a fictional research concept created for AI Empowered Pharmacy to make abstract pharmaceutical science ideas more tangible. It's used here only to illustrate how researchers think about targeted delivery, without making any unsupported clinical claims.",
     },
     {
       id: "nanotech-research",
@@ -196,7 +196,7 @@ const APP_DATA = {
       summary:
         "Explores how nanoscale engineering is studied as a way to improve drug targeting and stability.",
       body:
-        "Across the pharmaceutical field, researchers study nanoscale carriers — including lipid and polymer-based particles — for their potential to protect sensitive drug molecules and influence how they distribute through the body. This is an active and evolving area of scientific research.",
+        "Across the pharmaceutical field, researchers study nanoscale carriers, including lipid and polymer-based particles, for their potential to protect sensitive drug molecules and influence how they distribute through the body. This is an active and evolving area of scientific research.",
     },
     {
       id: "ai-assisted-education",
@@ -206,7 +206,7 @@ const APP_DATA = {
       summary:
         "How AI-inspired tools like this app can support interactive learning about pharmaceutical concepts.",
       body:
-        "AI-inspired educational tools can present complex pharmaceutical science in interactive, digestible formats — quizzes, visual explainers and structured cards. This app demonstrates that concept; it does not use live AI models to generate medical advice.",
+        "AI-inspired educational tools can present complex pharmaceutical science in interactive, digestible formats, quizzes, visual explainers and structured cards. This app demonstrates that concept; it does not use live AI models to generate medical advice.",
     },
     {
       id: "scientific-visualization",
@@ -216,7 +216,7 @@ const APP_DATA = {
       summary:
         "Visual models help communicate molecular structures and delivery mechanisms to learners.",
       body:
-        "Illustrations of molecules, DNA structures and cellular targets — like those used throughout this app — help make abstract pharmaceutical science concepts easier to understand for students and the general public.",
+        "Illustrations of molecules, DNA structures and cellular targets, like those used throughout this app, help make abstract pharmaceutical science concepts easier to understand for students and the general public.",
     },
     {
       id: "drug-delivery-research",
@@ -243,7 +243,7 @@ const APP_DATA = {
       ],
       correctIndex: 0,
       explanation:
-        "Pharmacokinetics covers ADME — absorption, distribution, metabolism and excretion — describing how the body processes a drug over time.",
+        "Pharmacokinetics covers ADME, absorption, distribution, metabolism and excretion, describing how the body processes a drug over time.",
     },
     {
       id: "q2",
@@ -277,7 +277,7 @@ const APP_DATA = {
       ],
       correctIndex: 0,
       explanation:
-        "NSAID stands for Nonsteroidal Anti-Inflammatory Drug — a class that includes ibuprofen.",
+        "NSAID stands for Nonsteroidal Anti-Inflammatory Drug, a class that includes ibuprofen.",
     },
     {
       id: "q5",
@@ -298,7 +298,7 @@ const APP_DATA = {
       ],
       correctIndex: 1,
       explanation:
-        "A dosage form refers to the physical form of a medicine — solid, liquid, semi-solid or gas — which affects how it's used and absorbed.",
+        "A dosage form refers to the physical form of a medicine, solid, liquid, semi-solid or gas, which affects how it's used and absorbed.",
     },
     {
       id: "q7",
@@ -332,7 +332,7 @@ const APP_DATA = {
       ],
       correctIndex: 2,
       explanation:
-        "This app uses AI-inspired concepts purely to support interactive education — never diagnosis or prescribing.",
+        "This app uses AI-inspired concepts purely to support interactive education, never diagnosis or prescribing.",
     },
     {
       id: "q10",
@@ -353,7 +353,7 @@ const APP_DATA = {
       ],
       correctIndex: 1,
       explanation:
-        "Cytosen is a fictional research concept created specifically for this educational project — not a real drug or clinical entity.",
+        "Cytosen is a fictional research concept created specifically for this educational project, not a real drug or clinical entity.",
     },
     {
       id: "q12",
@@ -366,7 +366,7 @@ const APP_DATA = {
       ],
       correctIndex: 1,
       explanation:
-        "Understanding medication safety principles — like verification and clear communication — helps build safer healthcare habits for everyone.",
+        "Understanding medication safety principles, like verification and clear communication, helps build safer healthcare habits for everyone.",
     },
     {
       id: "q13",
