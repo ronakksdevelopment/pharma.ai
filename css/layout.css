@@ -1,0 +1,320 @@
+/* ==========================================================================
+   App Shell Layout
+   ========================================================================== */
+
+#app {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  width: 100%;
+  max-width: var(--app-max-width);
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ---- Top App Bar --------------------------------------------------------- */
+
+.topbar {
+  position: sticky;
+  top: var(--safe-top);
+  z-index: var(--z-topbar);
+  height: var(--topbar-height);
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-4);
+  gap: var(--space-3);
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.topbar-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.topbar-title {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.15;
+}
+
+.topbar-title strong {
+  font-size: var(--fs-base);
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar-title span {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.icon-btn {
+  width: var(--touch-target);
+  height: var(--touch-target);
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  transition: background var(--transition-fast);
+  position: relative;
+}
+
+.icon-btn:hover {
+  background: var(--color-surface);
+}
+
+.icon-btn:active {
+  background: var(--color-surface-strong);
+}
+
+.icon-btn .status-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-danger);
+  border: 2px solid var(--color-bg);
+}
+
+/* ---- Main content area ---------------------------------------------------- */
+
+.view {
+  flex: 1;
+  padding: var(--space-5) var(--space-4) calc(var(--bottomnav-height) + var(--space-8) + var(--safe-bottom));
+  display: none;
+  animation: viewFadeIn var(--transition-base);
+}
+
+.view.is-active {
+  display: block;
+}
+
+@keyframes viewFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view { animation: none; }
+}
+
+.view-header {
+  margin-bottom: var(--space-5);
+}
+
+.view-header h1 {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.view-header p {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-sm);
+  margin-top: var(--space-1);
+}
+
+/* ---- Bottom Navigation (mobile) -------------------------------------------- */
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-bottomnav);
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  box-shadow: var(--shadow-nav);
+  padding-bottom: var(--safe-bottom);
+}
+
+.bottom-nav-inner {
+  max-width: var(--app-max-width);
+  margin: 0 auto;
+  display: flex;
+  height: var(--bottomnav-height);
+}
+
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  padding: var(--space-1);
+  min-height: var(--touch-target);
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.nav-item i {
+  font-size: 1.15rem;
+  transition: transform var(--transition-fast);
+}
+
+.nav-item.is-active {
+  color: var(--color-primary);
+}
+
+.nav-item.is-active i {
+  transform: translateY(-1px);
+}
+
+.nav-item.is-active::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  width: 28px;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+}
+
+/* ---- Desktop Navigation ------------------------------------------------- */
+
+.desktop-nav {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .app-container {
+    max-width: var(--desktop-max-width);
+    flex-direction: row;
+  }
+
+  .topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    padding: 0 var(--space-7);
+  }
+
+  .desktop-nav {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    flex-shrink: 0;
+    position: fixed;
+    top: var(--topbar-height);
+    left: calc(50% - (var(--desktop-max-width) / 2));
+    bottom: 0;
+    padding: var(--space-6) var(--space-4);
+    border-right: 1px solid var(--color-border);
+    gap: var(--space-1);
+  }
+
+  @media (max-width: 1240px) {
+    .desktop-nav {
+      left: var(--space-4);
+    }
+  }
+
+  .desktop-nav-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    font-size: var(--fs-base);
+    background: none;
+    border: none;
+    text-align: left;
+    transition: background var(--transition-fast), color var(--transition-fast);
+  }
+
+  .desktop-nav-item i {
+    width: 20px;
+    text-align: center;
+    font-size: 1.05rem;
+  }
+
+  .desktop-nav-item:hover {
+    background: var(--color-surface);
+  }
+
+  .desktop-nav-item.is-active {
+    background: var(--color-surface);
+    color: var(--color-primary);
+  }
+
+  .bottom-nav {
+    display: none;
+  }
+
+  .app-container {
+    padding-top: var(--topbar-height);
+  }
+
+  .view {
+    margin-left: 240px;
+    max-width: 720px;
+    padding: var(--space-8) var(--space-7);
+  }
+
+  .view.is-active {
+    display: block;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1240px) {
+  .view {
+    margin-left: 240px;
+  }
+}
+
+/* ---- Tablet intermediate tweak --------------------------------------------- */
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .app-container {
+    max-width: 600px;
+  }
+
+  .view {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+}
