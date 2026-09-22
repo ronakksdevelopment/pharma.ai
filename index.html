@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5">
+  <title>AI Empowered Pharmacy · v0.5 Beta Prototype</title>
+  <meta name="description" content="An educational pharmacy and pharmaceutical technology demonstration app — v0.5 Beta Prototype.">
+  <meta name="theme-color" content="#1769D2">
+  <meta name="color-scheme" content="light">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="AI Emp. Pharmacy">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/onboarding.css">
+  <link rel="stylesheet" href="css/views.css">
+</head>
+<body>
+  <a href="#viewContainer" class="skip-link">Skip to content</a>
+
+  <div id="app">
+    <!-- ===================== Onboarding Overlay ===================== -->
+    <div id="onboarding" class="onboarding is-hidden" role="dialog" aria-modal="true" aria-label="Welcome onboarding">
+      <div class="onboarding-topbar">
+        <button class="onboarding-skip" data-onboarding-skip>Skip</button>
+      </div>
+      <div class="onboarding-track"></div>
+      <div class="onboarding-footer">
+        <div class="onboarding-dots"></div>
+        <div class="onboarding-actions">
+          <button class="btn btn-secondary" data-onboarding-back>Back</button>
+          <button class="btn btn-primary" data-onboarding-next><span>Next</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== Top App Bar ===================== -->
+    <header class="topbar">
+      <div class="topbar-brand">
+        <img class="topbar-logo" src="assets/icons/icon-96.png" alt="" width="32" height="32">
+        <div class="topbar-title">
+          <strong>AI Empowered Pharmacy</strong>
+          <span>v0.5 Beta Prototype</span>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button class="icon-btn" id="connectivityBtn" aria-label="Connectivity status">
+          <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+          <span class="status-dot" id="connectivityDot" style="display:none;"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="offline-banner" id="offlineBanner" role="status">
+      <i class="fa-solid fa-cloud-arrow-down" aria-hidden="true"></i>
+      <span>You're offline — showing cached content</span>
+    </div>
+
+    <div class="app-container">
+      <!-- ===================== Desktop Sidebar Nav ===================== -->
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <button class="desktop-nav-item nav-item is-active" data-nav-target="home" aria-current="page">
+          <i class="fa-solid fa-house" aria-hidden="true"></i><span>Home</span>
+        </button>
+        <button class="desktop-nav-item nav-item" data-nav-target="explore">
+          <i class="fa-solid fa-compass" aria-hidden="true"></i><span>Explore</span>
+        </button>
+        <button class="desktop-nav-item nav-item" data-nav-target="quiz">
+          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Quiz</span>
+        </button>
+        <button class="desktop-nav-item nav-item" data-nav-target="research">
+          <i class="fa-solid fa-flask" aria-hidden="true"></i><span>Research</span>
+        </button>
+        <button class="desktop-nav-item nav-item" data-nav-target="profile">
+          <i class="fa-solid fa-user" aria-hidden="true"></i><span>Profile</span>
+        </button>
+      </nav>
+
+      <!-- ===================== Main View ===================== -->
+      <main id="viewContainer" class="view is-active" tabindex="-1" aria-live="polite"></main>
+    </div>
+
+    <!-- ===================== Bottom Navigation (mobile) ===================== -->
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <div class="bottom-nav-inner">
+        <button class="nav-item is-active" data-nav-target="home" aria-current="page">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          <span>Home</span>
+        </button>
+        <button class="nav-item" data-nav-target="explore">
+          <i class="fa-solid fa-compass" aria-hidden="true"></i>
+          <span>Explore</span>
+        </button>
+        <button class="nav-item" data-nav-target="quiz">
+          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+          <span>Quiz</span>
+        </button>
+        <button class="nav-item" data-nav-target="research">
+          <i class="fa-solid fa-flask" aria-hidden="true"></i>
+          <span>Research</span>
+        </button>
+        <button class="nav-item" data-nav-target="profile">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          <span>Profile</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ===================== Bottom Sheet ===================== -->
+    <div class="sheet-overlay" id="sheetOverlay" aria-hidden="true">
+      <div class="sheet" role="dialog" aria-modal="true"></div>
+    </div>
+
+    <!-- ===================== Toast Region ===================== -->
+    <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+  </div>
+
+  <!-- App scripts (order matters) -->
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/pwa-install.js"></script>
+  <script src="js/sheet.js"></script>
+  <script src="js/onboarding.js"></script>
+  <script src="js/views/home.js"></script>
+  <script src="js/views/explore.js"></script>
+  <script src="js/views/research.js"></script>
+  <script src="js/views/quiz.js"></script>
+  <script src="js/views/profile.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
