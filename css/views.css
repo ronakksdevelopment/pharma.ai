@@ -425,10 +425,20 @@
   text-align: center;
 }
 
-.install-card i {
+.install-card > i {
   font-size: 1.8rem;
   color: var(--color-primary);
   margin-bottom: var(--space-3);
+}
+
+/* The install button itself lives inside .install-card and has a solid
+   primary-color background, so its icon must stay white or it disappears
+   against the button (it was previously inheriting the card's blue icon
+   color, matching the button background exactly). */
+.install-card .btn i {
+  font-size: 1em;
+  color: #fff;
+  margin-bottom: 0;
 }
 
 .install-card h3 {

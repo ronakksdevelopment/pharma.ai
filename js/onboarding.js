@@ -45,11 +45,13 @@ const Onboarding = (() => {
           <div class="onboarding-slide-image">
             <picture>
               <source srcset="${Utils.assetUrl(illus.webp)}" type="image/webp">
-              <img src="${Utils.assetUrl(illus.png)}" alt="${Utils.escapeHtml(illus.alt)}" width="700" height="1243" loading="${i === 0 ? "eager" : "lazy"}">
+              <img src="${Utils.assetUrl(illus.png)}" alt="${Utils.escapeHtml(illus.alt)}" width="1254" height="1254" loading="${i === 0 ? "eager" : "lazy"}">
             </picture>
           </div>
-          <h2>${Utils.escapeHtml(slide.title)}</h2>
-          <p>${Utils.escapeHtml(slide.body)}</p>
+          <div class="onboarding-slide-text">
+            <h2>${Utils.escapeHtml(slide.title)}</h2>
+            <p>${Utils.escapeHtml(slide.body)}</p>
+          </div>
         </div>`;
       })
       .join("");

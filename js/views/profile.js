@@ -60,7 +60,7 @@ const ProfileView = (() => {
         <div class="section-header"><h2>Credits</h2></div>
         <div class="card">
           <div class="form-row">
-            <div class="form-row-label"><i class="fa-solid fa-code" aria-hidden="true"></i><span>Developer Contribution</span></div>
+            <div class="form-row-label"><i class="fa-solid fa-code" aria-hidden="true"></i><span>Developer</span></div>
             <a href="${Utils.escapeHtml(APP_CONFIG.developer.githubUrl)}" target="_blank" rel="noopener" class="form-row-value">${Utils.escapeHtml(APP_CONFIG.developer.handle)}</a>
           </div>
           <div class="form-row">
@@ -104,7 +104,7 @@ const ProfileView = (() => {
       </section>
 
       <footer class="app-footer">
-        <p>Developer contribution <strong>${Utils.escapeHtml(APP_CONFIG.developer.handle)}</strong></p>
+        <p>Developer <strong>${Utils.escapeHtml(APP_CONFIG.developer.handle)}</strong></p>
         <p style="margin-top:4px;">${Utils.escapeHtml(APP_CONFIG.versionLabel)} &middot; Educational demonstration only</p>
       </footer>
     `;

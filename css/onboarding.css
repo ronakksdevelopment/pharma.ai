@@ -63,32 +63,52 @@
 
 .onboarding-slide {
   min-width: 100%;
-  min-height: 0;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: var(--space-2) var(--space-6) var(--space-4);
+  padding: 0;
   transition: transform var(--transition-slow), opacity var(--transition-slow);
 }
 
+/* Image fills the full width of the screen edge-to-edge, centered, and
+   stays perfectly square (1:1 source artwork) at any viewport width. */
 .onboarding-slide-image {
   width: 100%;
-  max-width: 320px;
-  /* Scales down on short viewports so heading, body and controls
-     always stay visible without clipping or internal scrolling. */
-  flex: 0 1 auto;
-  margin: 0 auto var(--space-5);
+  max-width: 560px;
+  aspect-ratio: 1 / 1;
+  flex: 0 0 auto;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.onboarding-slide-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .onboarding-slide-image img {
+  display: block;
   width: 100%;
-  height: auto;
-  max-height: min(42vh, 420px);
-  object-fit: contain;
-  border-radius: var(--radius-lg);
-  margin: 0 auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* Text sits in its own block, pushed toward the bottom of the slide
+   (above the dots/actions footer) instead of hugging the image. */
+.onboarding-slide-text {
+  width: 100%;
+  margin-top: auto;
+  padding: var(--space-5) var(--space-6) var(--space-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .onboarding-slide h2 {
@@ -159,11 +179,10 @@
    the image further and tighten spacing before anything overflows. */
 @media (max-height: 640px) {
   .onboarding-slide-image {
-    max-width: 220px;
-    margin-bottom: var(--space-3);
+    max-width: min(60vw, 260px);
   }
-  .onboarding-slide-image img {
-    max-height: 28vh;
+  .onboarding-slide-text {
+    padding-top: var(--space-3);
   }
   .onboarding-slide h2 {
     font-size: var(--fs-lg);
@@ -176,19 +195,13 @@
 
 @media (max-height: 480px) {
   .onboarding-slide-image {
-    max-width: 160px;
-  }
-  .onboarding-slide-image img {
-    max-height: 22vh;
+    max-width: min(48vw, 190px);
   }
 }
 
 @media (min-width: 700px) {
   .onboarding-slide-image {
-    max-width: 380px;
-  }
-  .onboarding-slide-image img {
-    max-height: min(48vh, 480px);
+    max-width: 420px;
   }
   .onboarding-footer,
   .onboarding-actions {
