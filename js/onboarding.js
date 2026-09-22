@@ -5,7 +5,7 @@
 
 const Onboarding = (() => {
   let currentSlide = 0;
-  let overlay, track, dotsContainer, backBtn, nextBtn, skipBtn;
+  let overlay, track, trackInner, dotsContainer, backBtn, nextBtn, skipBtn;
   let releaseFocusTrap = null;
   let onCompleteCallback = null;
 
@@ -37,7 +37,7 @@ const Onboarding = (() => {
     nextBtn = Utils.qs("[data-onboarding-next]", overlay);
     skipBtn = Utils.qs("[data-onboarding-skip]", overlay);
 
-    track.innerHTML = slides
+    track.innerHTML = `<div class="onboarding-track-inner">${slides
       .map((slide, i) => {
         const illus = APP_CONFIG.assets.illustrations[slide.key];
         return `
@@ -54,7 +54,9 @@ const Onboarding = (() => {
           </div>
         </div>`;
       })
-      .join("");
+      .join("")}</div>`;
+
+    trackInner = Utils.qs(".onboarding-track-inner", track);
 
     dotsContainer.innerHTML = slides
       .map((_, i) => `<span class="onboarding-dot${i === 0 ? " is-active" : ""}" data-dot="${i}"></span>`)
@@ -108,7 +110,7 @@ const Onboarding = (() => {
 
   function render() {
     const slideEls = Utils.qsa(".onboarding-slide", track);
-    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    trackInner.style.transform = `translateX(-${currentSlide * 100}%)`;
     slideEls.forEach((el, i) => {
       el.style.opacity = i === currentSlide ? "1" : "0.4";
     });

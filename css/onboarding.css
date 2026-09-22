@@ -48,17 +48,25 @@
   transform: scale(0.97);
 }
 
-/* The track is the scrolling/shrinking region between the fixed topbar
-   and fixed footer. min-height: 0 is required so flex children (the
-   slides) are allowed to shrink below their content size instead of
-   overflowing the viewport on short screens. */
+/* The track is the fixed, non-transformed clipping viewport between the
+   topbar and footer. It must NEVER receive the slide transform itself:
+   overflow-hidden clips to an element's own local box before any
+   transform is applied to that same element, so translating the track
+   would just carry its already-clipped (slide 0) view off-screen instead
+   of revealing the other slides. The transform belongs on the inner
+   flex row (.onboarding-track-inner) instead, one level down. */
 .onboarding-track {
   flex: 1;
-  display: flex;
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
   min-height: 0;
+}
+
+.onboarding-track-inner {
+  display: flex;
+  min-height: 100%;
+  transition: transform var(--transition-slow);
 }
 
 .onboarding-slide {
@@ -69,7 +77,7 @@
   align-items: center;
   text-align: center;
   padding: 0;
-  transition: transform var(--transition-slow), opacity var(--transition-slow);
+  transition: opacity var(--transition-slow);
 }
 
 /* Image fills the full width of the screen edge-to-edge, centered, and
@@ -206,11 +214,18 @@
   .onboarding-footer,
   .onboarding-actions {
     max-width: 400px;
+    /* Once max-width caps these flex items below the full container
+       width, the default stretch alignment leaves them pinned to the
+       start (left) edge instead of centering them - margin:auto on the
+       cross axis re-centers them. */
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .onboarding-slide {
+  .onboarding-slide,
+  .onboarding-track-inner {
     transition: none;
   }
 }

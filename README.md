@@ -16,7 +16,7 @@ AI Empowered Pharmacy combines pharmacy education, pharmaceutical science, AI-in
 - **Home**, hero section, quick actions, featured research, education topics, featured medicines and a quiz shortcut
 - **Explore**, searchable, filterable educational cards across 7 categories (Pharmacy Basics, Pharmaceutical Science, Drug Delivery, Nanotechnology, AI in Healthcare, Dosage Forms, Medication Safety) plus medicine reference cards
 - **Quiz**, 13 multiple-choice pharmacy & pharmaceutical science questions with instant feedback, progress tracking, scoring and retry
-- **Research**, pharmaceutical technology themes including the project's own fictional **Cytosen** concept, clearly labeled as a project concept (not a real drug)
+- **Research**, pharmaceutical technology themes including chitosan-based nanoparticle drug delivery, a real area of pharmaceutical science research
 - **Profile**, PWA install button, replayable onboarding, About Us, Credits, two project-concept authors, developer contribution, GitHub link and educational disclaimer
 - **Installable PWA**, manifest, service worker, offline caching, custom install prompt, installed-state detection
 - **Accessible**, semantic HTML, ARIA labels, visible focus states, ~44px touch targets, `prefers-reduced-motion` support

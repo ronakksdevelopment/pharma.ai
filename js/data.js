@@ -179,14 +179,14 @@ const APP_DATA = {
   // ---- Research topics -----------------------------------------------------
   research: [
     {
-      id: "cytosen",
-      title: "Cytosen, Project Concept",
+      id: "chitosan",
+      title: "Chitosan in Nanoparticle Research",
       icon: "fa-flask-vial",
-      badge: "Project Concept",
+      badge: "Research Material",
       summary:
-        "Cytosen is a conceptual research theme created for this educational project to explore targeted delivery ideas.",
+        "Chitosan is a natural biopolymer widely studied for its role in nanoparticle-based drug delivery research.",
       body:
-        "Cytosen is not a real drug, product or clinical entity, it's a fictional research concept created for AI Empowered Pharmacy to make abstract pharmaceutical science ideas more tangible. It's used here only to illustrate how researchers think about targeted delivery, without making any unsupported clinical claims.",
+        "Chitosan is a naturally derived biopolymer, produced from chitin found in crustacean shells and fungal cell walls, that researchers study for its biocompatibility, biodegradability and ability to form nanoparticles. It's discussed here as a real example of the kind of nanotechnology research relevant to modern pharmaceutical science, particularly for targeted and controlled drug delivery.",
     },
     {
       id: "nanotech-research",
@@ -344,16 +344,16 @@ const APP_DATA = {
     },
     {
       id: "q11",
-      question: "What is 'Cytosen' within this app?",
+      question: "What is 'Chitosan' as discussed in this app?",
       options: [
-        "A real, approved medicine",
-        "A fictional project concept used to explain research themes",
+        "A synthetic plastic with no biological origin",
+        "A natural biopolymer studied for nanoparticle drug delivery",
         "A government health agency",
         "A type of antibiotic",
       ],
       correctIndex: 1,
       explanation:
-        "Cytosen is a fictional research concept created specifically for this educational project, not a real drug or clinical entity.",
+        "Chitosan is a naturally derived biopolymer (from chitin) that researchers study for its biocompatibility and biodegradability in nanoparticle-based drug delivery systems.",
     },
     {
       id: "q12",
